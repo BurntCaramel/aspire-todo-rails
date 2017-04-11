@@ -4,7 +4,8 @@ class TodoItemsController < ApplicationController
   # GET /todo_items
   # GET /todo_items.json
   def index
-    @todo_items = TodoItem.all
+    @incomplete_items = TodoItem.where(completed_at: nil)
+    @complete_items = TodoItem.where.not(completed_at: nil)
   end
 
   # GET /todo_items/1

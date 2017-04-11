@@ -1,28 +1,11 @@
-<p id="notice"><%= notice %></p>
+<% if notice.present? %>
+  <div id="notice" class="mui-panel"><%= notice %></div>
+<% end %>
 
 <h1>Todo</h1>
 
-<table class="mui-table">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Completed</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @todo_items.each do |item| %>
-      <tr>
-        <td><%= item.title %></td>
-        <td><%= completed_at_ago item %></td>
-        <td><%= link_to 'Edit', todo_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
+<%= render partial: 'table', locals: { items: @incomplete_items } %>
 <%= link_to 'New Todo Item', new_todo_item_path, class: 'mui-btn mui-btn--primary' %>
+
+<h2>Completed</h2>
+<%= render partial: 'table', locals: { items: @complete_items } %>
