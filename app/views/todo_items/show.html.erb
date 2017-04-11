@@ -1,14 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
+<h1>
   <%= @todo_item.title %>
-</p>
+</h1>
 
 <p>
-  <strong>Completed at:</strong>
-  <%= @todo_item.completed_at %>
+  <strong>Completed:</strong>
+  <%= completed_at_ago @todo_item %>
 </p>
 
-<%= link_to 'Edit', edit_todo_item_path(@todo_item) %> |
-<%= link_to 'Back', todo_items_path %>
+<%= link_to 'Edit', edit_todo_item_path(@todo_item), class: 'mui-btn mui-btn--primary' %>
+<%= link_to 'Back', todo_items_path, class: 'mui-btn' %>

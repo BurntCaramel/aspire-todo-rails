@@ -1,4 +1,4 @@
-<%= form_for(todo_item) do |f| %>
+<%= form_for(todo_item, class: 'mui-form') do |f| %>
   <% if todo_item.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(todo_item.errors.count, "error") %> prohibited this todo_item from being saved:</h2>
@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="mui-textfield">
     <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
 
-  <div class="field">
-    <%= f.label :completed_at %>
-    <%= f.datetime_select :completed_at %>
+  <div class="mui-checkbox">
+    <%= f.label :completed_at, 'Completed' %>
+    <%= f.check_box :completed_at %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'mui-btn mui-btn--primary' %>
   </div>
 <% end %>
