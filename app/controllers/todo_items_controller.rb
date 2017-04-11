@@ -10,6 +10,7 @@ class TodoItemsController < ApplicationController
   # GET /todo_items/1
   # GET /todo_items/1.json
   def show
+    redirect_to edit_todo_item_url(@todo_item)
   end
 
   # GET /todo_items/new
@@ -40,6 +41,8 @@ class TodoItemsController < ApplicationController
   # PATCH/PUT /todo_items/1
   # PATCH/PUT /todo_items/1.json
   def update
+    #byebug
+
     respond_to do |format|
       if @todo_item.update(todo_item_params)
         format.html { redirect_to @todo_item, notice: 'Todo item was successfully updated.' }
@@ -69,6 +72,6 @@ class TodoItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def todo_item_params
-      params.require(:todo_item).permit(:title)
+      params.require(:todo_item).permit(:title, :completed)
     end
 end

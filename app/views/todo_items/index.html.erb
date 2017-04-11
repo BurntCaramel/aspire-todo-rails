@@ -7,7 +7,7 @@
     <tr>
       <th>Title</th>
       <th>Completed</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -16,7 +16,6 @@
       <tr>
         <td><%= item.title %></td>
         <td><%= completed_at_ago item %></td>
-        <td><%= link_to 'Show', item %></td>
         <td><%= link_to 'Edit', todo_item_path(item) %></td>
         <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

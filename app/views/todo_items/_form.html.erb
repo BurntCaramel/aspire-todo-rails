@@ -18,8 +18,9 @@
 
   <% unless todo_item.new_record? %>
     <div class="mui-checkbox">
-      <%= f.label :completed_at, 'Completed' %>
-      <%= f.check_box :completed_at %>
+      <%= f.label :completed, 'Completed' %>
+      <%= f.hidden_field :completed, value: '' %>
+      <%= f.check_box :completed %>
     </div>
   <% end %>
 
