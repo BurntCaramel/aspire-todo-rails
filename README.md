@@ -10,6 +10,9 @@
 
 ## Creating
 
+- `mkdir -d ~/db/postgres`
+- `initdb -D ~/db/postgres/data -EUTF-8 --locale=en_US.UTF-8`
+- `pg_ctl start -D ~/db/postgres/data -l ~/db/postgres/postgres.log`
 - `createdb todo_development`
 - `rails g scaffold TodoItem title:string completed_at:timestamp`
 
