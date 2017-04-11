@@ -8,6 +8,11 @@
 - In order to make progress and feel successful, as a planner I want to complete a todo item
 - In order to change my plans, as a planner I want to edit or remove todo items
 
+## Creating
+
+- `createdb todo_development`
+- `rails g scaffold TodoItem title:string completed_at:timestamp`
+
 ## Technicals
 
 Things you may want to cover:
