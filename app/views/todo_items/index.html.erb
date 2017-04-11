@@ -2,7 +2,9 @@
   <div id="notice" class="mui-panel"><%= notice %></div>
 <% end %>
 
-<h1>Todo</h1>
+<div class="mui-row">
+  <%= unsplash_image 'dawn' %>
+</div>
 
 <%= render partial: 'table', locals: { items: @incomplete_items } %>
 <%= link_to 'New Todo Item', new_todo_item_path, class: 'mui-btn mui-btn--primary' %>
