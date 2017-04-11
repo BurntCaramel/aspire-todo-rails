@@ -1,7 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## User Stories
+
+- In order to plan ahead, as a planner I want to see all todo items
+- In order to plan ahead, as a planner I want to see all pending todo items
+- In order to update my plans, as a planner I want to create a new todo item
+- In order to make progress and feel successful, as a planner I want to complete a todo item
+- In order to change my plans, as a planner I want to edit or remove todo items
+
+## Technicals
 
 Things you may want to cover:
 
