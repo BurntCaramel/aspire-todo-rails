@@ -16,6 +16,11 @@
     <%= f.text_field :title %>
   </div>
 
+  <div class="mui-select">
+    <%= f.label :list_id %>
+    <%= f.collection_select :list_id, List.all, :id, :title %>
+  </div>
+
   <% unless todo_item.new_record? %>
     <div class="mui-checkbox">
       <%= f.label :completed, 'Completed' %>

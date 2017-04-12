@@ -1,11 +1,12 @@
 class TodoItemsController < ApplicationController
+  before_action :set_list
   before_action :set_todo_item, only: [:show, :edit, :update, :destroy]
 
   # GET /todo_items
   # GET /todo_items.json
   def index
-    @incomplete_items = TodoItem.where(completed_at: nil)
-    @complete_items = TodoItem.where.not(completed_at: nil)
+    @incomplete_items = @list.todo_items.where(completed_at: nil)
+    @complete_items = @list.todo_items.where.not(completed_at: nil)
   end
 
   # GET /todo_items/1
@@ -71,8 +72,12 @@ class TodoItemsController < ApplicationController
       @todo_item = TodoItem.find(params[:id])
     end
 
+    def set_list
+      @list = List.find(params[:list_id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def todo_item_params
-      params.require(:todo_item).permit(:title, :completed)
+      params.require(:todo_item).permit(:title, :completed, :list_id)
     end
 end

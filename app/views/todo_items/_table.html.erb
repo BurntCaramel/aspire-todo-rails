@@ -3,6 +3,7 @@
     <tr>
       <th>Title</th>
       <th>Completed</th>
+      <th>List</th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -12,8 +13,9 @@
       <tr>
         <td><%= item.title %></td>
         <td><%= completed_at_ago item %></td>
-        <td><%= link_to 'Edit', todo_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= item.list.try(:title) %></td>
+        <td><%= link_to 'Edit', edit_list_todo_item_path(@list, item) %></td>
+        <td><%= link_to 'Destroy', [@list, item], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Title</th>
+      <th>Items</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -11,6 +12,7 @@
   <tbody>
     <tr>
       <td><h2><%= link_to list.title, list %></h2></td>
+      <td><%= link_to list.todo_items.count, list_todo_items_path(list) %></td>
       <td><%= link_to 'Edit', edit_list_path(list) %></td>
     </tr>
   </tbody>

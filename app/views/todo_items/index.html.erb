@@ -7,7 +7,7 @@
 </div>
 
 <%= render partial: 'table', locals: { items: @incomplete_items } %>
-<%= link_to 'New Todo Item', new_todo_item_path, class: 'mui-btn mui-btn--primary' %>
+<%= link_to 'New Todo Item', new_list_todo_item_path, class: 'mui-btn mui-btn--primary' %>
 
 <h2>Completed</h2>
 <%= render partial: 'table', locals: { items: @complete_items } %>
