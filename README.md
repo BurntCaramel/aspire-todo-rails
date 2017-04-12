@@ -16,6 +16,17 @@
 - `createdb todo_development`
 - `rails g scaffold TodoItem title:string completed_at:timestamp`
 
+## Deploying
+
+```bash
+git remote add origin git@github.com:BurntCaramel/aspire-todo-rails.git
+git push -u origin master
+heroku create
+heroku apps:rename aspire-todo
+git push heroku master
+heroku run rails db:migrate
+```
+
 ## Technicals
 
 Things you may want to cover:
