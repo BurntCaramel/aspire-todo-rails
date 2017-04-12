@@ -1,0 +1,10 @@
+<h1>Edit List</h1>
+
+<%= form_for(@list) do |f| %>
+  <div class="mui-field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <%= f.submit %>
+<% end %>
