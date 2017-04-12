@@ -10,6 +10,14 @@
 
 ## Creating
 
+### New app
+```
+rails new MY_APP -T --database=postgresql
+cd MY_APP
+rails g rspec:install
+```
+
+### Database
 - Install PostgreSQL: `brew install postegresql`
 - Create folders for PostgreSQL: `mkdir -p ~/db/postgres`
 - Create database files: `initdb -D ~/db/postgres/data -EUTF-8 --locale=en_US.UTF-8`
